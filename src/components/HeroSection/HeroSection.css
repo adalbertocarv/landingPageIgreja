@@ -1,0 +1,61 @@
+.hero-section {
+    position: relative; /* Necessário para o pseudo-elemento posicionar corretamente */
+    background-image: url('../../assets/Deus.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites */
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Camada escura com opacidade ajustável */
+    backdrop-filter: blur(2px); /* Aplica desfoque */
+    z-index: 1; /* Posiciona o pseudo-elemento abaixo do conteúdo da seção */
+  }
+  
+  .hero-content {
+    position: relative; /* Para garantir que o conteúdo fique acima da camada escura */
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-button {
+    padding: 15px 30px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #e0b108;
+    color: black;
+  }
+  
