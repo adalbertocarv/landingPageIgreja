@@ -1,8 +1,9 @@
+/* Estilo da navbar padrão */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px;
     background-color: transparent;
     position: absolute;
     width: 100%;
@@ -17,18 +18,21 @@
   }
   
   .navbar-logo img {
-    width: 50px;
+    width: 40px; /* Ajuste o tamanho do logo */
   }
   
   .navbar-logo h1, .navbar-logo p {
     color: white;
     margin: 0;
+    font-size: 1.2rem; /* Ajuste de fonte para telas menores */
   }
   
+  /* Links de navegação padrão */
   .navbar-links {
     list-style: none;
     display: flex;
     gap: 30px;
+    transition: all 0.3s ease;
   }
   
   .navbar-links a {
@@ -42,6 +46,59 @@
   
   .navbar-links a:hover,
   .navbar-links a.active {
-    color: #e0b108; /* Cor para destacar o link ativo */
+    color: #e0b108;
+  }
+  
+  /* Menu hamburguer - escondido por padrão */
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute; /* Posiciona o menu hamburguer de forma absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Compensa o posicionamento para centralizar */
+  }
+  
+  .hamburger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  /* Estilo para dispositivos móveis */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 20px; /* Ajuste de padding para telas menores */
+      justify-content: center; /* Centraliza logo e menu hamburguer */
+    }
+  
+    .navbar-logo {
+      flex-direction: column; /* Alinha o logo verticalmente */
+      align-items: center;
+    }
+  
+    .navbar-links {
+      display: none; /* Esconder a navegação padrão */
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      width: 200px;
+    }
+  
+    .navbar-links.active {
+      display: flex; /* Mostrar o menu ao clicar */
+    }
+  
+    .hamburger-menu {
+      display: flex; /* Mostrar o menu hamburguer em telas pequenas */
+    }
   }
   

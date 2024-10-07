@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media screen and (max-width: 768px) {
+  body, html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .App {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ajuste outros elementos conforme necessário */
 }

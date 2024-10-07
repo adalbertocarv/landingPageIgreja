@@ -6,8 +6,8 @@ const HeroSection = () => {
     <section className="hero-section" id="home">
       <div className="hero-content">
         <h1>Deus Abençoe sempre</h1>
-        <p>All gave some and some gave all</p>
-        <button className="hero-button">Read More</button>
+        <p>O Senhor é o meu pastor; de nada terei falta. (Salmos 23:1)</p>
+        <button className="hero-button">Saiba Mais</button>
       </div>
     </section>
   );

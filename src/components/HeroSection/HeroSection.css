@@ -1,61 +1,98 @@
 .hero-section {
-    position: relative; /* Necessário para o pseudo-elemento posicionar corretamente */
+    position: relative;
     background-image: url('../../assets/Deus.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     color: white;
-    height: 90vh;
+    min-height: 90vh; /* Garante que ocupe toda a altura da viewport */
+    width: 100%; /* Assegura que a largura não ultrapasse 100% da viewport */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse os limites */
-  }
-  
-  .hero-section::before {
+    overflow: hidden;
+    padding: 0 20px; /* Ajuste do padding para manter um espaço lateral */
+    box-sizing: border-box; /* Garante que padding e border não causem overflow */
+}
+
+.hero-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Camada escura com opacidade ajustável */
-    backdrop-filter: blur(2px); /* Aplica desfoque */
-    z-index: 1; /* Posiciona o pseudo-elemento abaixo do conteúdo da seção */
-  }
-  
-  .hero-content {
-    position: relative; /* Para garantir que o conteúdo fique acima da camada escura */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
     z-index: 2;
     max-width: 800px;
     padding: 20px;
-  }
-  
-  .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
+}
+
+.hero-content h1 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem; /* Ajuste conforme necessário */
+    font-weight: 400; /* Peso mais fino */
+    letter-spacing: 2px; /* Espaçamento entre as letras */
+    color: white;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar contraste */
   }
-  
-  .hero-content p {
+
+.hero-content p {
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero-button {
+}
+
+.hero-button {
     padding: 15px 30px;
     border: 2px solid white;
     background: transparent;
     color: white;
     cursor: pointer;
     font-size: 1.2rem;
+    border-radius: 40px;
     transition: all 0.3s ease;
-  }
-  
-  .hero-button:hover {
-    background-color: #e0b108;
+}
+
+.hero-button:hover {
+    background-color: white;
     color: black;
-  }
-  
+}
+
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    .hero-section {
+        background-size: cover; /* Garante que a imagem cubra a tela */
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 0 20px; /* Ajusta o padding para se adaptar à largura da tela */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Reduz o tamanho do título em telas menores */
+        white-space: normal; /* Permite quebra de linha para texto longo */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Ajuste do tamanho da fonte do subtítulo */
+    }
+
+    .hero-button {
+        padding: 10px 20px; /* Ajusta o botão para telas menores */
+        font-size: 1rem;
+    }
+}
